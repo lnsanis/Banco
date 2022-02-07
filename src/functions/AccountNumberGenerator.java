@@ -1,4 +1,6 @@
-package funcoes;
+//Classe para poder gerar os números das contas que são cadastradas no sistema automaticamente
+
+package functions;
 
 public class AccountNumberGenerator {
 

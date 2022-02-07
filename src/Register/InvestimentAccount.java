@@ -1,4 +1,6 @@
-package Register;
+//Classe filha da BankAccount, essa é a classe da Conta Investimento
+
+package register;
 
 import java.util.Scanner;
 
@@ -7,7 +9,7 @@ public class InvestimentAccount extends BankAccount{
 	public InvestimentAccount(String nameClient, String cpf, double monthlyIncome, int accountNumber, int agency) {
 		super(nameClient, cpf, monthlyIncome, accountNumber, agency);
 	}
-
+//Selecionar o tipo de investimento
 	public static void invest() {
 		
 		System.out.println("Selecione o tipo de investimento:\n");
@@ -29,7 +31,7 @@ public class InvestimentAccount extends BankAccount{
 		}
 		input.close();
 	}
-	
+//Simulação de investimento no Tesouro Direto	
 	public static void directTreasure() {
 		System.out.println("Informe o valor que será investido : ");
 		Scanner input = new Scanner(System.in);
@@ -41,7 +43,7 @@ public class InvestimentAccount extends BankAccount{
 		
 		
 	}
-	
+//Simulação de investimento nos Fundos de investimento	
 	public static void investimentFunds() {
 		System.out.println("Informe o valor que será investido: ");
 		Scanner input = new Scanner(System.in);

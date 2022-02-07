@@ -1,4 +1,8 @@
-package Register;
+//Essa é a classe pai dos tipos de conta que são cadastradas no sistema (os métodos estão no lá embaixo)
+
+package register;
+
+import java.util.Scanner;
 
 public class BankAccount {
 	
@@ -10,7 +14,7 @@ public class BankAccount {
 	private int agency;
 	
 	
-	
+//Esse é o construtor da conta do usuário	
 	public BankAccount(String nameClient, String cpf, double monthlyIncome, int accountNumber, int agency) {
 		super();
 		this.nameClient = nameClient;
@@ -77,21 +81,33 @@ public class BankAccount {
 		s += "]";
 		return s; 
 	}
+
+//Método para depositar dinheiro da conta	
 	
-	public void deposit(double value) {
+	public void deposit() {
+		Scanner input = new Scanner(System.in);
+		double value = input.nextDouble();
+		input.close();
 		balance += value;
+		
 	}
 	
-	
-	public void withdraw(double value) { 
+//Método para sacar dinheiro da conta	
+	public void withdraw() { 
+		Scanner input = new Scanner(System.in);
+		double value = input.nextDouble();
+		input.close();
 		balance -= value; 
 	}
 	 
-	
+//Método para consultar o saldo da conta	
 	public void accountBalance(double value) {
 		System.out.println("Seu saldo é: " + balance);
 	}
-	
-	
+//Método para transferir dinheiro para outra conta	
+	public void transfer(BankAccount destiny, double value) {
+		balance = balance - value;
+		destiny.balance = destiny.balance + value;
+	}
 	
 }

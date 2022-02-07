@@ -1,4 +1,6 @@
-package Register;
+//Classe filha da BankAccount, essa é a classe da Conta Poupança
+
+package register;
 
 import java.util.Scanner;
 
@@ -9,7 +11,7 @@ public class SavingsAccount extends BankAccount{
 	public SavingsAccount(String nameClient, String cpf, double monthlyIncome, int accountNumber, int agency) {
 		super(nameClient, cpf, monthlyIncome, accountNumber, agency);
 	}
-
+//Simulação de valores da poupança
 	public void incomeSimulation() {
 
 		System.out.println("Informe a quantidade de meses para simular: ");
