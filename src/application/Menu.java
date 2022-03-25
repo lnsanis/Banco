@@ -12,7 +12,7 @@ public class Menu {
 
 	public static void menu() {
 		
-		System.out.println("           **Bem Vindo ao Banco DevInMoney**\n");
+		System.out.println("           **Bem Vindo ao Bank Money**\n");
 		System.out.println("                 Como podemos ajudar?\n\n");
 		System.out.println("Se quiser acessar sua conta aperte 1");
 		System.out.println("Se desejar realizar o cadastro de conta em nosso banco aperte 2");
@@ -31,7 +31,7 @@ public class Menu {
 				break;
 				
 			default:
-				System.out.println("Opção inválida");
+				System.out.println("OpÃ§Ã£o invÃ¡lida");
 				menu();
 			}
 		
@@ -39,18 +39,18 @@ public class Menu {
 	
 	public static void accessAccount() {
 		
-		System.out.println("Informe o número da conta por favor: ");
+		System.out.println("Informe o nÃºmero da conta por favor: ");
 		Scanner input = new Scanner(System.in);
 		int numAccount = input.nextInt();
 		BankAccount account = AccountTable.getAccountByAccountNumber(numAccount);
 		
 		
 		System.out.println("Bem-vindo\n");
-		System.out.println("Selecione uma opção:\n");
-		System.out.println("Opção 1 - Depositar");
-		System.out.println("Opção 2 - Sacar");
-		System.out.println("Opção 3 - Saldo da conata");
-		System.out.println("Opção 4 - Transferir");
+		System.out.println("Selecione uma opÃ§Ã£o:\n");
+		System.out.println("OpÃ§Ã£o 1 - Depositar");
+		System.out.println("OpÃ§Ã£o 2 - Sacar");
+		System.out.println("OpÃ§Ã£o 3 - Saldo da conata");
+		System.out.println("OpÃ§Ã£o 4 - Transferir");
 		
 		int option = input.nextInt();
 		switch(option) {
@@ -69,11 +69,11 @@ public class Menu {
 			break;
 			
 		default: 
-			System.out.println("Opção inválida");
+			System.out.println("OpÃ§Ã£o invÃ¡lida");
 		}
 		input.close();
 	}
-//Criação de conta nova	
+//CriaÃ§Ã£o de conta nova	
 	public static void registerAccount() {
 		
 		Scanner account = new Scanner(System.in);	
@@ -81,7 +81,7 @@ public class Menu {
 		System.out.println("Digite seu nome:");
 		String name = account.next();
 
-		//Usando a validação do CPF
+		//Usando a validaÃ§Ã£o do CPF
 		System.out.println("Digite seu CPF:");
 		String cpf = account.nextLine();
 		if (CpfValidate.isCPF(cpf) == true)
@@ -92,11 +92,11 @@ public class Menu {
 		double monthlyIncome = account.nextDouble();
 		
 		int accountNumber = AccountNumberGenerator.getNextNumber();
-		System.out.println("\nO número da sua conta será: " + accountNumber);
+		System.out.println("\nO nÃºmero da sua conta serÃ¡: " + accountNumber);
 		System.out.println();
-		System.out.println("Selecione uma agência");
-		System.out.println("001 - Florianópolis");
-		System.out.println("002 - São José");
+		System.out.println("Selecione uma agÃªncia");
+		System.out.println("001 - FlorianÃ³polis");
+		System.out.println("002 - SÃ£o JosÃ©");
 		int agency = account.nextInt();
 		
 		BankAccount user = new BankAccount(name, cpf, monthlyIncome, accountNumber, agency);
